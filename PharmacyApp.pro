@@ -13,12 +13,14 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     patient.cpp \
+    prescription.cpp \
     prescription.cpp
 
 HEADERS += \
     createprescription.h \
     mainwindow.h \
     patient.h \
+    prescription.h \
     prescription.h
 
 FORMS += \
