@@ -19,7 +19,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_homeButton_clicked()
 {
-    CreatePrescription c;
-    c.setModal(true);
-    c.exec();
+    CreatePrescription createPrescription;
+    createPrescription.setModal(true);
+    createPrescription.exec();
 }

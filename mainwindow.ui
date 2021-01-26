@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>510</width>
-    <height>474</height>
+    <height>484</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -216,7 +216,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionCreate_new">
    <property name="text">
-    <string>Create new prescription</string>
+    <string>New Prescription...</string>
    </property>
   </action>
  </widget>
