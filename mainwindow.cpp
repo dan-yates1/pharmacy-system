@@ -19,6 +19,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_homeButton_clicked()
 {
+}
+
+void MainWindow::on_createPrescriptionButton_clicked()
+{
     CreatePrescription createPrescription;
     createPrescription.setModal(true);
     createPrescription.exec();
