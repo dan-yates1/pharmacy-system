@@ -1,24 +1,23 @@
 #include "patient.h"
 
-
 Patient::Patient() {
 
 }
 
-std::string Patient::get_fname(){
+QString Patient::get_fname(){
     return first_name_;
 }
 
-void Patient::set_fname(std::string fname)
+void Patient::set_fname(QString fname)
 {
     first_name_ = fname;
 }
 
-std::string Patient::get_lname(){
+QString Patient::get_lname(){
     return first_name_;
 }
 
-void Patient::set_lname(std::string lname)
+void Patient::set_lname(QString lname)
 {
     last_name_ = lname;
 }
