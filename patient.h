@@ -1,7 +1,7 @@
 #ifndef PATIENT_H
 #define PATIENT_H
 
-#include <string>
+#include <QString>
 
 
 class Patient

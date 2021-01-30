@@ -17,5 +17,8 @@ CreatePrescription::~CreatePrescription()
 void CreatePrescription::on_createPrescriptionButton_clicked()
 {
     int patient_id = ui->patientIdEdit->text().toInt();
-    QString prescriptionType = ui->prescriptionTypeComboBox->currentText();
+    QString prescription_type = ui->prescriptionTypeComboBox->currentText();
+
+    Prescription *p = new Prescription();
+    p->set_prescription_type(prescription_type);
 }

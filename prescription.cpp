@@ -17,7 +17,7 @@ void Prescription::set_prescription_id(int id)
 
 QString Prescription::get_prescription_type()
 {
-
+    return prescription_type_;
 }
 
 void Prescription::set_prescription_type(QString type)

@@ -13,16 +13,16 @@ SOURCES += \
     createprescription.cpp \
     main.cpp \
     mainwindow.cpp \
+    medication.cpp \
     patient.cpp \
-    prescription.cpp \
     prescription.cpp
 
 HEADERS += \
     bloodwork.h \
     createprescription.h \
     mainwindow.h \
+    medication.h \
     patient.h \
-    prescription.h \
     prescription.h
 
 FORMS += \
