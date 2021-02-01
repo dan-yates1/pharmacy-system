@@ -4,6 +4,7 @@
 #include "patient.h"
 #include "bloodwork.h"
 #include <QString>
+#include <QDate>
 
 class Prescription
 {
@@ -17,13 +18,17 @@ public:
     void set_drug_id(int id);
     QString get_prescription_type();
     void set_prescription_type(QString type);
+    QDate get_start_date();
+    void set_start_date(QDate date);
+    QDate get_end_date();
+    void set_end_date(QDate date);
 private:
     int prescription_id_;
     Patient patient_;
     int drug_id_;
     QString prescription_type_;
-    //QDate start_date_;
-    //QDate end_date_;
+    QDate start_date_;
+    QDate end_date_;
 };
 
 #endif // PRESCRIPTION_H

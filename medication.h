@@ -2,8 +2,9 @@
 #define MEDICATION_H
 
 #include <QString>
-#include <vector>
 #include <fstream>
+#include <string>
+#include <iostream>
 
 class Medication
 {

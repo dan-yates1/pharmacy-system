@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "patient.h"
+#include "medication.h"
 
 #include <QApplication>
 

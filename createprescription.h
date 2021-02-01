@@ -2,6 +2,10 @@
 #define CREATEPRESCRIPTION_H
 
 #include <QDialog>
+#include <QStringView>
+#include <QDebug>
+#include <iostream>
+#include <QFile>
 
 namespace Ui {
 class CreatePrescription;
