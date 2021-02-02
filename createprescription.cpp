@@ -15,7 +15,7 @@ CreatePrescription::~CreatePrescription()
     delete ui;
 }
 
-void CreatePrescription::WriteToDatabase()
+void CreatePrescription::ConnectToDatabase()
 {
 }
 
