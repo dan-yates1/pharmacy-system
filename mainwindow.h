@@ -21,6 +21,8 @@ private slots:
 
     void on_createPrescriptionButton_clicked();
 
+    void on_createUserButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

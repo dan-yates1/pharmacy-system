@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     bloodwork.cpp \
     createprescription.cpp \
+    createuser.cpp \
     main.cpp \
     mainwindow.cpp \
     medication.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 HEADERS += \
     bloodwork.h \
     createprescription.h \
+    createuser.h \
     mainwindow.h \
     medication.h \
     patient.h \
@@ -27,6 +29,7 @@ HEADERS += \
 
 FORMS += \
     createprescription.ui \
+    createuser.ui \
     mainwindow.ui
 
 # Default rules for deployment.

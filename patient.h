@@ -2,7 +2,7 @@
 #define PATIENT_H
 
 #include <QString>
-
+#include <QDate>
 
 class Patient
 {
@@ -13,14 +13,14 @@ public:
     QString get_lname();
     void set_lname(QString lname);
     int get_id();
-    void set_id();
-    int get_dob();
-    void set_dob(int dob);
+    void set_id(int id);
+    QDate get_dob();
+    void set_dob(QDate dob);
 private:
     int patient_id_;
     QString first_name_;
     QString last_name_;
-    int dob_;
+    QDate dob_;
 };
 
 #endif // PATIENT_H

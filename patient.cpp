@@ -29,12 +29,17 @@ int Patient::get_id()
     return patient_id_;
 }
 
-int Patient::get_dob()
+void Patient::set_id(int id)
+{
+    patient_id_ = id;
+}
+
+QDate Patient::get_dob()
 {
     return dob_;
 }
 
-void Patient::set_dob(int dob)
+void Patient::set_dob(QDate dob)
 {
     dob_ = dob;
 }

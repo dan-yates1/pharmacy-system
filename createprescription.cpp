@@ -17,6 +17,7 @@ CreatePrescription::~CreatePrescription()
 
 void CreatePrescription::ConnectToDatabase()
 {
+
 }
 
 void CreatePrescription::UpdateMedications()
@@ -50,6 +51,4 @@ void CreatePrescription::on_createPrescriptionButton_clicked()
         //QString date = test.toString("dd.MM.yyyy");
         p->set_end_date(ui->endDateEdit->date());
     } else QMessageBox::warning(this,"Invalid input","Make sure that the start date is before the end date");
-
-    WriteToDatabase();
 }

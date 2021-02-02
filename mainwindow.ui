@@ -27,7 +27,7 @@
      <item>
       <layout class="QGridLayout" name="gridLayout">
        <item row="2" column="1">
-        <widget class="QPushButton" name="helpButton">
+        <widget class="QPushButton" name="createUserButton">
          <property name="minimumSize">
           <size>
            <width>100</width>
@@ -46,7 +46,7 @@
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QPushButton" name="settingsButton">
+        <widget class="QPushButton" name="viewPatientButton">
          <property name="maximumSize">
           <size>
            <width>100</width>
@@ -165,14 +165,14 @@
        <item row="3" column="1" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>Help</string>
+          <string>Create User</string>
          </property>
         </widget>
        </item>
        <item row="3" column="2" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>Settings</string>
+          <string>View Patient</string>
          </property>
         </widget>
        </item>
