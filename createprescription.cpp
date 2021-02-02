@@ -7,6 +7,20 @@ CreatePrescription::CreatePrescription(QWidget *parent) :
     ui(new Ui::CreatePrescription)
 {
     ui->setupUi(this);
+    UpdateMedications();
+}
+
+CreatePrescription::~CreatePrescription()
+{
+    delete ui;
+}
+
+void CreatePrescription::WriteToDatabase()
+{
+}
+
+void CreatePrescription::UpdateMedications()
+{
     // populate medications combo box via csv file
     QFile file(":/csv/medications.csv");
     if(file.open(QIODevice::ReadOnly))
@@ -19,11 +33,6 @@ CreatePrescription::CreatePrescription(QWidget *parent) :
         }
         file.close();
     }
-}
-
-CreatePrescription::~CreatePrescription()
-{
-    delete ui;
 }
 
 void CreatePrescription::on_createPrescriptionButton_clicked()
@@ -42,4 +51,5 @@ void CreatePrescription::on_createPrescriptionButton_clicked()
         p->set_end_date(ui->endDateEdit->date());
     } else QMessageBox::warning(this,"Invalid input","Make sure that the start date is before the end date");
 
+    WriteToDatabase();
 }
