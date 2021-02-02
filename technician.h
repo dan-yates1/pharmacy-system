@@ -12,13 +12,15 @@ public:
     int get_id();
     void set_id(int id);
     QString get_fname();
-    void set_fname(QString first_name);
+    void set_fname(QString fname);
     QString get_lname();
-    void set_lname(QString last_name);
+    void set_lname(QString lname);
     QDate get_dob();
     void set_dob(QDate dob);
     QString get_password();
     void set_password(QString password);
+
+    void AddToDatabase();
 private:
     int id_;
     QString first_name_;

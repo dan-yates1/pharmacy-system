@@ -28,10 +28,10 @@ Technician CreateUser::CreateTechnician()
 {
     // create technician object and assign variables
     Technician *t = new Technician();
-    //t->set_id(ui->patientIdEdit->text().toInt());
-    //t->set_fname(ui->firstNameEdit->text());
-    //t->set_lname(ui->secondNameEdit->text());
-    //t->set_dob(ui->dobEdit->date());
+    t->set_id(ui->patientIdEdit->text().toInt());
+    t->set_fname(ui->firstNameEdit->text());
+    t->set_lname(ui->secondNameEdit->text());
+    t->set_dob(ui->dobEdit->date());
     return *t;
 }
 
@@ -54,7 +54,7 @@ void CreateUser::on_createUserButton_clicked()
         if (ok && !password.isEmpty())
         {
             Technician t = CreateTechnician();
-            //t.set_password(text);
+            t.set_password(password);
             QMessageBox::information(this,"Notification","Technician acccount created");
         }
     }

@@ -8,6 +8,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QtSql/QSqlDatabase>
+#include "medication.h"
 
 namespace Ui {
 class CreatePrescription;
@@ -20,7 +21,6 @@ class CreatePrescription : public QDialog
 public:
     explicit CreatePrescription(QWidget *parent = nullptr);
     ~CreatePrescription();
-    void ConnectToDatabase();
     void UpdateMedications();
     void UpdatePatients();
 private slots:

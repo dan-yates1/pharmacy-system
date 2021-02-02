@@ -15,24 +15,14 @@ CreatePrescription::~CreatePrescription()
     delete ui;
 }
 
-void CreatePrescription::ConnectToDatabase()
-{
-
-}
-
 void CreatePrescription::UpdateMedications()
 {
-    // populate medications combo box via csv file
-    QFile file(":/csv/medications.csv");
-    if(file.open(QIODevice::ReadOnly))
+    // create medication object and populate combo box
+    Medication *m = new Medication();
+    QVector<QString> medication_list = m->get_names();
+    for(int i =0; i < medication_list.size(); i++)
     {
-        QTextStream in(&file);
-        while(!in.atEnd())
-        {
-            QString line = in.readLine();
-            ui->medTypeComboBox->addItem(line.split(',').at(1));
-        }
-        file.close();
+        ui->medTypeComboBox->addItem(medication_list[i]);
     }
 }
 

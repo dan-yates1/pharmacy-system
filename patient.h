@@ -16,6 +16,8 @@ public:
     void set_id(int id);
     QDate get_dob();
     void set_dob(QDate dob);
+
+    void AddToDatabase();
 private:
     int patient_id_;
     QString first_name_;
