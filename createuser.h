@@ -5,6 +5,8 @@
 #include <iostream>
 #include <QDebug>
 #include <QMessageBox>
+#include <QInputDialog>
+#include <QDir>
 #include "patient.h"
 #include "technician.h"
 

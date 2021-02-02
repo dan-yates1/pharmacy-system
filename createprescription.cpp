@@ -36,6 +36,11 @@ void CreatePrescription::UpdateMedications()
     }
 }
 
+void CreatePrescription::UpdatePatients()
+{
+    // TODO: populate patients combo box via database/csv file
+}
+
 void CreatePrescription::on_createPrescriptionButton_clicked()
 {
     // check if dates are valid

@@ -5,16 +5,16 @@
 #include <QDate>
 
 class Technician
-// technician can log into and interact with system
+// technician can log in and use system
 {
 public:
     Technician();
     int get_id();
     void set_id(int id);
-    QString get_first_name();
-    void set_first_name(QString first_name);
-    QString get_last_name();
-    void set_last_name(QString last_name);
+    QString get_fname();
+    void set_fname(QString first_name);
+    QString get_lname();
+    void set_lname(QString last_name);
     QDate get_dob();
     void set_dob(QDate dob);
     QString get_password();

@@ -22,6 +22,7 @@ public:
     ~CreatePrescription();
     void ConnectToDatabase();
     void UpdateMedications();
+    void UpdatePatients();
 private slots:
     void on_createPrescriptionButton_clicked();
 
