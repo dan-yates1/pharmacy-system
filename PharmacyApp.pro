@@ -16,7 +16,8 @@ SOURCES += \
     mainwindow.cpp \
     medication.cpp \
     patient.cpp \
-    prescription.cpp
+    prescription.cpp \
+    technician.cpp
 
 HEADERS += \
     bloodwork.h \
@@ -25,7 +26,8 @@ HEADERS += \
     mainwindow.h \
     medication.h \
     patient.h \
-    prescription.h
+    prescription.h \
+    technician.h
 
 FORMS += \
     createprescription.ui \

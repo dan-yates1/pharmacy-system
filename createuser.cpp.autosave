@@ -47,6 +47,6 @@ void CreateUser::on_createUserButton_clicked()
     if (ui->userTypeCombo->currentText() == technician)
     {
         technician t = CreateTechnician();
-         QMessageBox::information(this,"Notification","Technician acccount created");
+        QMessageBox::information(this,"Notification","Technician acccount created");
     }
 }

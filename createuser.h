@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include "patient.h"
+#include "technician.h"
 
 namespace Ui {
 class CreateUser;
@@ -18,7 +19,8 @@ class CreateUser : public QDialog
 public:
     explicit CreateUser(QWidget *parent = nullptr);
     ~CreateUser();
-
+    Patient CreatePatient();
+    Technician CreateTechnician();
 private slots:
 
     void on_createUserButton_clicked();
