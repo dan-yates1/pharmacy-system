@@ -15,6 +15,11 @@ void Prescription::set_prescription_id(int id)
     prescription_id_ = id;
 }
 
+void Prescription::set_drug_id(int id)
+{
+    drug_id_ = id;
+}
+
 QString Prescription::get_prescription_type()
 {
     return prescription_type_;

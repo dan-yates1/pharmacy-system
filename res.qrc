@@ -3,5 +3,12 @@
         <file>medications.csv</file>
         <file>blood_test_element.csv</file>
     </qresource>
-    <qresource prefix="/icons"/>
+    <qresource prefix="/icons">
+        <file>create-prescription.png</file>
+        <file>create-user.png</file>
+        <file>home.png</file>
+        <file>view-bloodwork.png</file>
+        <file>view-prescription.png</file>
+        <file>view-patient.png</file>
+    </qresource>
 </RCC>

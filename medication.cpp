@@ -8,7 +8,7 @@ Medication::Medication()
 
 int Medication::get_id(QString medication_name)
 {
-
+    return medication_names.key(medication_name);
 }
 
 int Medication::get_access(int id)
