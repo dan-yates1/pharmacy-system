@@ -1,10 +1,12 @@
 #include "patient.h"
 
-Patient::Patient() {
+Patient::Patient()
+{
 
 }
 
-QString Patient::get_fname(){
+QString Patient::get_fname()
+{
     return first_name_;
 }
 

@@ -1,0 +1,27 @@
+ID,ELEMENT_CODE,ELEMENT_NAME
+42,Antipsychotic PHM,Antipsychotic Physical Health Monitoring including QRISK2
+28,Prolactin,Prolactin Concentration
+45,Opthalmology Review,Opthalmology Annual Review with Opthalmologist
+22,Inhaler Review,Asthma/COPD review
+23,HRT,Hormone Replacement Therapy Review
+1,FBC,Full Blood Count
+2,BP,Blood Pressure
+3,U&E,Urea and Electrolytes
+4,LFT,Liver Function Test
+5,Lipids,"Lipid Profile
+LDL,HDL, Total cholesterol, Triglycerides"
+6,HbA1c,HbA1c
+7,TFT,Thyroid Function Test
+8,ESP,Erythrocyte sedimentation rate
+9,CRP,C-Reactive Protein
+10,Lithium,Lithium test
+27,INR,INR Testing
+62,Height and weight,Height and weight
+21,Diabetes Review,Diabetes Annual Review
+24,Pill Check,Contraceptive Annual Review
+25,Anti-depressant Review,Anti-depressant Review
+41,Opiate Review,Opiate/analgesia review
+26,,
+43,Methylphenidate monitoring,Methylphenidate physical health monitoring
+44,ACR,Albumin to Creatinine Ratio
+61,Urinalysis,Urinalysis for protein/blood

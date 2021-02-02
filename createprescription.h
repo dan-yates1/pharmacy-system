@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <iostream>
 #include <QFile>
+#include <QMessageBox>
 
 namespace Ui {
 class CreatePrescription;
@@ -18,7 +19,6 @@ class CreatePrescription : public QDialog
 public:
     explicit CreatePrescription(QWidget *parent = nullptr);
     ~CreatePrescription();
-
 private slots:
     void on_createPrescriptionButton_clicked();
 
