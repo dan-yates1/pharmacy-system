@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QDate>
+#include "database.h"
 
 class Patient
 {

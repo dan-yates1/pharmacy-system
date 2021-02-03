@@ -5,6 +5,8 @@
 #include "createuser.h"
 #include <iostream>
 
+// TODO: add functionality to menu bar
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -20,6 +22,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_homeButton_clicked()
 {
+    Patient *p = new Patient();
 }
 
 void MainWindow::on_createPrescriptionButton_clicked()
@@ -34,4 +37,14 @@ void MainWindow::on_createUserButton_clicked()
     CreateUser create_user;
     create_user.setModal(true);
     create_user.exec();
+}
+
+void MainWindow::on_viewPrescriptionButton_clicked()
+{
+    // TODO:
+}
+
+void MainWindow::on_viewBloodworkButton_clicked()
+{
+    // TODO:
 }

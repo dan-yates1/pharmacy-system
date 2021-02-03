@@ -20,55 +20,23 @@
       <x>0</x>
       <y>0</y>
       <width>501</width>
-      <height>437</height>
+      <height>438</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="1">
-        <widget class="QPushButton" name="createPatientButton">
-         <property name="minimumSize">
-          <size>
-           <width>100</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QPushButton" name="viewPatientButton">
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>View Prescriptions</string>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="1" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_2">
          <property name="text">
           <string>Create Prescription</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>View Bloodwork</string>
          </property>
         </widget>
        </item>
@@ -86,27 +54,21 @@
            <height>100</height>
           </size>
          </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="viewPrescriptionButton">
-         <property name="minimumSize">
-          <size>
-           <width>100</width>
-           <height>100</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>100</width>
-           <height>100</height>
-          </size>
+         <property name="styleSheet">
+          <string notr="true">border: 0px;</string>
          </property>
          <property name="text">
           <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/icons/create-prescription.png</normaloff>:/icons/create-prescription.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>64</width>
+           <height>64</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -124,11 +86,21 @@
            <height>100</height>
           </size>
          </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
+         <property name="styleSheet">
+          <string notr="true">border: 0px;</string>
          </property>
          <property name="text">
           <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/icons/home.png</normaloff>:/icons/home.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>64</width>
+           <height>64</height>
+          </size>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -150,29 +122,141 @@
            <height>100</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">border: 0px;</string>
+         </property>
          <property name="text">
           <string/>
          </property>
-        </widget>
-       </item>
-       <item row="3" column="0" alignment="Qt::AlignHCenter">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>View Bloodwork</string>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/icons/view-bloodwork.png</normaloff>:/icons/view-bloodwork.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>64</width>
+           <height>64</height>
+          </size>
          </property>
         </widget>
        </item>
-       <item row="3" column="1" alignment="Qt::AlignHCenter">
+       <item row="0" column="2">
+        <widget class="QPushButton" name="createUserButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 0px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/icons/create-user.png</normaloff>:/icons/create-user.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>64</width>
+           <height>64</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="viewPrescriptionButton">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 0px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/icons/view-prescription.png</normaloff>:/icons/view-prescription.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>64</width>
+           <height>64</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QPushButton" name="viewUsersButton">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 0px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/icons/view-patient.png</normaloff>:/icons/view-patient.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>64</width>
+           <height>64</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>Create Patient</string>
+          <string>Create User</string>
          </property>
         </widget>
        </item>
        <item row="3" column="2" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_6">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="text">
-          <string>View Patient</string>
+          <string>View Users</string>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>View Prescriptions</string>
          </property>
         </widget>
        </item>
@@ -198,6 +282,7 @@
      <string>File</string>
     </property>
     <addaction name="actionCreate_new"/>
+    <addaction name="actionNew_User"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -219,7 +304,14 @@
     <string>New Prescription...</string>
    </property>
   </action>
+  <action name="actionNew_User">
+   <property name="text">
+    <string>New User...</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

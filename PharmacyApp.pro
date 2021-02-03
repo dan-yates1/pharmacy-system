@@ -2,6 +2,8 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+QT += sql
+
 CONFIG += c++11
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -12,6 +14,7 @@ SOURCES += \
     bloodwork.cpp \
     createprescription.cpp \
     createuser.cpp \
+    database.cpp \
     main.cpp \
     mainwindow.cpp \
     medication.cpp \
@@ -23,6 +26,7 @@ HEADERS += \
     bloodwork.h \
     createprescription.h \
     createuser.h \
+    database.h \
     mainwindow.h \
     medication.h \
     patient.h \

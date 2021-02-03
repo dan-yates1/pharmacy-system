@@ -10,5 +10,6 @@
         <file>view-bloodwork.png</file>
         <file>view-prescription.png</file>
         <file>view-patient.png</file>
+        <file>window-icon.svg</file>
     </qresource>
 </RCC>

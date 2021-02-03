@@ -36,6 +36,8 @@ void CreatePrescription::UpdatePatients()
 void CreatePrescription::on_createPrescriptionButton_clicked()
 {
     // TODO: add yes/no dialog box to see if the prescription information is correct
+    // TODO: perform validation on inputs and check for missing entries
+
     int patient_id = ui->patientIdEdit->text().toInt();
     // create prescription object
     Prescription *p = new Prescription();

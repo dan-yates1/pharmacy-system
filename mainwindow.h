@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "patient.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,6 +23,10 @@ private slots:
     void on_createPrescriptionButton_clicked();
 
     void on_createUserButton_clicked();
+
+    void on_viewPrescriptionButton_clicked();
+
+    void on_viewBloodworkButton_clicked();
 
 private:
     Ui::MainWindow *ui;

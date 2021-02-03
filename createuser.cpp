@@ -13,7 +13,7 @@ CreateUser::~CreateUser()
     delete ui;
 }
 
-Patient CreateUser::CreatePatient()
+Patient *CreateUser::CreatePatient()
 {
     // create patient object and assign variables
     Patient *p = new Patient();
@@ -21,10 +21,10 @@ Patient CreateUser::CreatePatient()
     p->set_fname(ui->firstNameEdit->text());
     p->set_lname(ui->secondNameEdit->text());
     p->set_dob(ui->dobEdit->date());
-    return *p;
+    return p;
 }
 
-Technician CreateUser::CreateTechnician()
+Technician *CreateUser::CreateTechnician()
 {
     // create technician object and assign variables
     Technician *t = new Technician();
@@ -32,7 +32,7 @@ Technician CreateUser::CreateTechnician()
     t->set_fname(ui->firstNameEdit->text());
     t->set_lname(ui->secondNameEdit->text());
     t->set_dob(ui->dobEdit->date());
-    return *t;
+    return t;
 }
 
 void CreateUser::on_createUserButton_clicked()
@@ -42,8 +42,12 @@ void CreateUser::on_createUserButton_clicked()
     // create patient user
     if(ui->userTypeCombo->currentText() == patient)
     {
-        Patient p = CreatePatient();
         QMessageBox::information(this,"Notification","Patient acccount created");
+        // create patient object
+        Patient *p = CreatePatient();
+        // insert patient information into database
+        Database *database = new Database();
+        database->InsertPatient(p->get_id(),p->get_fname(),p->get_lname(),p->get_dob());
     }
     // create technician user
     if (ui->userTypeCombo->currentText() == technician)
@@ -53,8 +57,9 @@ void CreateUser::on_createUserButton_clicked()
         QString password = QInputDialog::getText(this, tr("QInputDialog::getText()"), tr("Set a password: "), QLineEdit::Normal, QDir::home().dirName(), &ok);
         if (ok && !password.isEmpty())
         {
-            Technician t = CreateTechnician();
-            t.set_password(password);
+            // create technician object
+            Technician *t = CreateTechnician();
+            t->set_password(password);
             QMessageBox::information(this,"Notification","Technician acccount created");
         }
     }
