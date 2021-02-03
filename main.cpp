@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.setWindowTitle("Pharmacy App");
     w.setWindowIcon(QIcon(":/icons/window-icon.svg"));
+    w.setFixedSize(w.size());
     w.show();
     return a.exec();  
 }
