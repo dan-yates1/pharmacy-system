@@ -103,7 +103,7 @@
       </item>
      </layout>
     </item>
-    <item>
+    <item alignment="Qt::AlignHCenter">
      <widget class="QPushButton" name="createUserButton">
       <property name="maximumSize">
        <size>
