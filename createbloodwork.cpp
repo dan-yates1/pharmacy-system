@@ -17,7 +17,19 @@ CreateBloodwork::~CreateBloodwork()
 
 void CreateBloodwork::UpdateReasons()
 {
-
+    QFile file(":/csv/blood_test_reasons.csv");
+    if(file.open(QIODevice::ReadOnly))
+    {
+        QTextStream in(&file);
+        while(!in.atEnd())
+        {
+            QString line = in.readLine();
+            QString reason = line.split(',').at(1);
+            int id = (line.split(',').at(0)).toInt();
+            ui->bloodworkTypeComboBox->addItem(reason);
+        }
+        file.close();
+    }
 }
 
 void CreateBloodwork::UpdatePatients()

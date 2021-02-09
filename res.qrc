@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/csv">
         <file>medications.csv</file>
-        <file>blood_test_element.csv</file>
+        <file>blood_test_reasons.csv</file>
     </qresource>
     <qresource prefix="/icons">
         <file>create-prescription.png</file>
