@@ -36,7 +36,7 @@
        <item row="3" column="0" alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>View Bloodwork</string>
+          <string>Book Bloodwork</string>
          </property>
         </widget>
        </item>
@@ -115,7 +115,7 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QPushButton" name="viewBloodworkButton">
+        <widget class="QPushButton" name="bookBloodworkButton">
          <property name="minimumSize">
           <size>
            <width>100</width>

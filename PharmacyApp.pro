@@ -12,6 +12,7 @@ CONFIG += c++11
 
 SOURCES += \
     bloodwork.cpp \
+    createbloodwork.cpp \
     createprescription.cpp \
     createuser.cpp \
     database.cpp \
@@ -24,6 +25,7 @@ SOURCES += \
 
 HEADERS += \
     bloodwork.h \
+    createbloodwork.h \
     createprescription.h \
     createuser.h \
     database.h \
@@ -34,6 +36,7 @@ HEADERS += \
     technician.h
 
 FORMS += \
+    createbloodwork.ui \
     createprescription.ui \
     createuser.ui \
     mainwindow.ui

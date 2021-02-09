@@ -26,7 +26,7 @@ private slots:
 
     void on_viewPrescriptionButton_clicked();
 
-    void on_viewBloodworkButton_clicked();
+    void on_bookBloodworkButton_clicked();
 
 private:
     Ui::MainWindow *ui;

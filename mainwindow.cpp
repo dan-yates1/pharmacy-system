@@ -3,6 +3,7 @@
 #include "patient.h"
 #include "createprescription.h"
 #include "createuser.h"
+#include "createbloodwork.h"
 #include <iostream>
 
 // TODO: add functionality to menu bar
@@ -44,7 +45,9 @@ void MainWindow::on_viewPrescriptionButton_clicked()
     // TODO:
 }
 
-void MainWindow::on_viewBloodworkButton_clicked()
+void MainWindow::on_bookBloodworkButton_clicked()
 {
-    // TODO:
+    CreateBloodwork create_bloodwork;
+    create_bloodwork.setModal(true);
+    create_bloodwork.exec();
 }
