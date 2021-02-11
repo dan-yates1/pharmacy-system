@@ -2,9 +2,7 @@
 
 Patient::Patient()
 {
-    Database *db = new Database();
-    //db->CreateConnection();
-    //db->SearchQuery("select * from patient");
+
 }
 
 QString Patient::get_fname()

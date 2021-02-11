@@ -13,14 +13,14 @@ CreateUser::~CreateUser()
     delete ui;
 }
 
-Patient *CreateUser::CreatePatient()
+Patient CreateUser::CreatePatient()
 {
     // create patient object and assign variables
-    Patient *p = new Patient();
-    p->set_id(ui->patientIdEdit->text().toInt());
-    p->set_fname(ui->firstNameEdit->text());
-    p->set_lname(ui->secondNameEdit->text());
-    p->set_dob(ui->dobEdit->date());
+    Patient p;
+    p.set_id(ui->patientIdEdit->text().toInt());
+    p.set_fname(ui->firstNameEdit->text());
+    p.set_lname(ui->secondNameEdit->text());
+    p.set_dob(ui->dobEdit->date());
     return p;
 }
 
@@ -44,10 +44,12 @@ void CreateUser::on_createUserButton_clicked()
     {
         QMessageBox::information(this,"Notification","Patient acccount created");
         // create patient object
-        Patient *p = CreatePatient();
+        Patient p = CreatePatient();
         // insert patient information into database
-        Database *database = new Database();
-        database->InsertPatient(p->get_id(),p->get_fname(),p->get_lname(),p->get_dob());
+        Database db;
+        //db.InsertPatient(p);
+        db.InsertPatient(p);
+        db.PrintAllPatients();
     }
     // create technician user
     if (ui->userTypeCombo->currentText() == technician)

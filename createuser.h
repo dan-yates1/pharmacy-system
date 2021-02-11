@@ -22,7 +22,7 @@ class CreateUser : public QDialog
 public:
     explicit CreateUser(QWidget *parent = nullptr);
     ~CreateUser();
-    Patient *CreatePatient();
+    Patient CreatePatient();
     Technician *CreateTechnician();
 private slots:
 

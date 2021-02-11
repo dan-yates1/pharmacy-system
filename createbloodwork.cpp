@@ -1,6 +1,8 @@
 #include "createbloodwork.h"
 #include "ui_createbloodwork.h"
 #include "bloodwork.h"
+#include <QFile>
+#include <QTextStream>
 
 CreateBloodwork::CreateBloodwork(QWidget *parent) :
     QDialog(parent),
