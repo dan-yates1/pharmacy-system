@@ -49,7 +49,7 @@ void CreateBloodwork::UpdatePatients()
     {
         QString fname = query.value(fnameIndex).toString();
         QString lname = query.value(lnameIndex).toString();
-        QString name = fname + lname;
+        QString name = fname + ' ' + lname;
         ui->patientComboBox->addItem(name);
     }
 }

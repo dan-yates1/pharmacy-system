@@ -1,6 +1,9 @@
 #include "createprescription.h"
 #include "ui_createprescription.h"
 #include "prescription.h"
+#include "database.h"
+#include <QSqlQuery>
+#include <QSqlRecord>
 
 CreatePrescription::CreatePrescription(QWidget *parent) :
     QDialog(parent),
@@ -9,6 +12,8 @@ CreatePrescription::CreatePrescription(QWidget *parent) :
     ui->setupUi(this);
     // update list of medications upon class initialization
     UpdateMedications();
+    Database db;
+    UpdatePatients();
 }
 
 CreatePrescription::~CreatePrescription()
@@ -30,7 +35,16 @@ void CreatePrescription::UpdateMedications()
 
 void CreatePrescription::UpdatePatients()
 {
-    // TODO: populate patients combo box via database/csv file
+    QSqlQuery query("SELECT * FROM patient");
+    int fnameIndex = query.record().indexOf("first_name");
+    int lnameIndex = query.record().indexOf("first_name");
+    while (query.next())
+    {
+        QString fname = query.value(fnameIndex).toString();
+        QString lname = query.value(lnameIndex).toString();
+        QString name = fname + ' ' + lname;
+        ui->comboBox->addItem(name);
+    }
 }
 
 void CreatePrescription::on_createPrescriptionButton_clicked()
@@ -38,7 +52,6 @@ void CreatePrescription::on_createPrescriptionButton_clicked()
     // TODO: add yes/no dialog box to see if the prescription information is correct
     // TODO: perform validation on inputs and check for missing entries
 
-    int patient_id = ui->patientIdEdit->text().toInt();
     // create prescription object
     Prescription *p = new Prescription();
     // insert data from form into prescription object
