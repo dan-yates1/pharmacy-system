@@ -16,7 +16,7 @@ void Patient::set_fname(QString fname)
 }
 
 QString Patient::get_lname(){
-    return first_name_;
+    return last_name_;
 }
 
 void Patient::set_lname(QString lname)

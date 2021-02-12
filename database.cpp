@@ -30,16 +30,12 @@ Database::~Database()
 bool Database::InsertPatient(Patient patient)
 {
     bool success = false;
-    QString fname = "John";
-    QString lname = "Brown";
-    QString dob = "01-01-1990";
 
     QSqlQuery qry;
     qry.prepare("INSERT INTO patient (first_name,last_name,dob) VALUES(:first_name,:last_name,:dob)");
-    //qry.bindValue(":id", patient.get_fname());
     qry.bindValue(":first_name", patient.get_fname());
     qry.bindValue(":last_name", patient.get_lname());
-    qry.bindValue(":dob", "1990-01-01");
+    qry.bindValue(":dob", patient.get_dob().toString("dd-MM-yyyy"));
 
     if(qry.exec())
     {
@@ -55,12 +51,11 @@ bool Database::InsertPatient(Patient patient)
 
 void Database::PrintAllPatients()
 {
-    qDebug() << "Persons in db:";
     QSqlQuery query("SELECT * FROM patient");
-    int idName = query.record().indexOf("first_name");
+    int patientId = query.record().indexOf("first_name");
     while (query.next())
     {
-        QString name = query.value(idName).toString();
-        qDebug() << "===" << name;
+        QString name = query.value(patientId).toString();
+        qDebug()<< name;
     }
 }

@@ -41,15 +41,15 @@ void CreateUser::on_createUserButton_clicked()
     QString technician = "Technician";
     // create patient user
     if(ui->userTypeCombo->currentText() == patient)
-    {
-        QMessageBox::information(this,"Notification","Patient acccount created");
+    { 
         // create patient object
         Patient p = CreatePatient();
-        // insert patient information into database
+        // create database object
         Database db;
-        //db.InsertPatient(p);
+        // insert patient into database
         db.InsertPatient(p);
         db.PrintAllPatients();
+        QMessageBox::information(this,"Notification","Patient acccount created");
     }
     // create technician user
     if (ui->userTypeCombo->currentText() == technician)

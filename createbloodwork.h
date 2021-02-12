@@ -18,6 +18,8 @@ public:
     void UpdatePatients();
 private slots:
     void on_bookBloodworkButton_clicked();
+    void on_submitBloodworkButton_clicked();
+
 private:
     Ui::CreateBloodwork *ui;
 };
