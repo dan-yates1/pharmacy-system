@@ -12,6 +12,7 @@ CONFIG += c++11
 
 SOURCES += \
     bloodwork.cpp \
+    calendarmanager.cpp \
     createbloodwork.cpp \
     createprescription.cpp \
     createuser.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 
 HEADERS += \
     bloodwork.h \
+    calendarmanager.h \
     createbloodwork.h \
     createprescription.h \
     createuser.h \

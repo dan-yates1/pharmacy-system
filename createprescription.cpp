@@ -37,7 +37,7 @@ void CreatePrescription::UpdatePatients()
 {
     QSqlQuery query("SELECT * FROM patient");
     int fnameIndex = query.record().indexOf("first_name");
-    int lnameIndex = query.record().indexOf("first_name");
+    int lnameIndex = query.record().indexOf("last_name");
     while (query.next())
     {
         QString fname = query.value(fnameIndex).toString();
@@ -47,21 +47,30 @@ void CreatePrescription::UpdatePatients()
     }
 }
 
+Prescription CreatePrescription::PopulatePrescription()
+{
+    Prescription p;
+    // insert data from form into prescription object
+    p.set_patient_id(ui->comboBox->currentIndex()+1);
+    p.set_prescription_type(ui->prescriptionTypeComboBox->currentText());
+    p.set_start_date(ui->startDateEdit->date());
+    p.set_end_date(ui->endDateEdit->date());
+    // get drug id
+    Medication m;
+    p.set_drug_id(m.get_id(ui->medTypeComboBox->currentText()));
+    p.set_drug(ui->medTypeComboBox->currentText());
+    return p;
+}
+
 void CreatePrescription::on_createPrescriptionButton_clicked()
 {
     // TODO: add yes/no dialog box to see if the prescription information is correct
     // TODO: perform validation on inputs and check for missing entries
 
     // create prescription object
-    Prescription *p = new Prescription();
-    // insert data from form into prescription object
-    p->set_prescription_type(ui->prescriptionTypeComboBox->currentText());
-    p->set_start_date(ui->startDateEdit->date());
-    p->set_end_date(ui->endDateEdit->date());
-    // get drug id
-    Medication *m = new Medication();
-    p->set_drug_id(m->get_id(ui->medTypeComboBox->currentText()));
-    QMessageBox::information(this,"Notification",QString("Prescription for %1 created").arg(ui->medTypeComboBox->currentText()));
+    Prescription p = PopulatePrescription();
+    Database db;
+    db.InsertPrescription(p);
 
-    // TODO: add prescription to database
+    QMessageBox::information(this,"Notification",QString("Prescription for %1 created").arg(ui->medTypeComboBox->currentText()));
 }

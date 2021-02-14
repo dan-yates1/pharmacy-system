@@ -23,7 +23,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_homeButton_clicked()
 {
-    Patient *p = new Patient();
+
 }
 
 void MainWindow::on_createPrescriptionButton_clicked()

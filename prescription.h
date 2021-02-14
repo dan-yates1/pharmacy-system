@@ -12,10 +12,12 @@ public:
     Prescription();
     int get_prescription_id();
     void set_prescription_id(int id);
-    Patient get_patient();
-    void set_patient(Patient patient);
+    int get_patient_id();
+    void set_patient_id(int id);
     int get_drug_id();
     void set_drug_id(int id);
+    void set_drug(QString drug);
+    QString get_drug();
     QString get_prescription_type();
     void set_prescription_type(QString type);
     QDate get_start_date();
@@ -24,8 +26,9 @@ public:
     void set_end_date(QDate date);
 private:
     int prescription_id_;
-    Patient patient_;
+    int patient_id_;
     int drug_id_;
+    QString drug_;
     QString prescription_type_;
     QDate start_date_;
     QDate end_date_;

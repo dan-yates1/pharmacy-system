@@ -49,6 +49,51 @@ bool Database::InsertPatient(Patient patient)
     return success;
 }
 
+bool Database::InsertBloodwork(Bloodwork b)
+{
+    bool success = false;
+
+    QSqlQuery qry;
+    qry.prepare("INSERT INTO bloodwork (patient_id,reason,date) VALUES(:patient_id,:reason,:date)");
+    qry.bindValue(":patient_id", b.get_patient_id());
+    qry.bindValue(":reason", b.get_reason());
+    qry.bindValue(":date", b.get_date().toString("dd-MM-yyyy"));
+
+    if(qry.exec())
+    {
+        success = true;
+    }
+    else
+    {
+        qDebug() << "add bloodwork failed: " << qry.lastError();
+    }
+
+    return success;
+}
+
+bool Database::InsertPrescription(Prescription p)
+{
+    bool success = false;
+
+    QSqlQuery qry;
+    qry.prepare("INSERT INTO prescription (patient_id,medication,start_date,end_date) VALUES(:patient_id,:medication,:start_date,:end_date)");
+    qry.bindValue(":patient_id", p.get_patient_id());
+    qry.bindValue(":medication", p.get_drug());
+    qry.bindValue(":start_date", p.get_start_date().toString("dd-MM-yyyy"));
+    qry.bindValue(":end_date", p.get_end_date().toString("dd-MM-yyyy"));
+
+    if(qry.exec())
+    {
+        success = true;
+    }
+    else
+    {
+        qDebug() << "add prescription failed: " << qry.lastError();
+    }
+
+    return success;
+}
+
 void Database::PrintAllPatients()
 {
     QSqlQuery query("SELECT * FROM patient");
@@ -58,4 +103,16 @@ void Database::PrintAllPatients()
         QString name = query.value(patientId).toString();
         qDebug()<< name;
     }
+}
+
+int Database::GetPatientId(QString name)
+{
+    int id;
+    QSqlQuery query("SELECT id FROM patient WHERE");
+    int index = query.record().indexOf("id");
+    while (query.next())
+    {
+        id = query.value(index).toInt();
+    }
+    return id;
 }

@@ -2,6 +2,8 @@
 #define DATABASE_H
 
 #include "patient.h"
+#include "bloodwork.h"
+#include "prescription.h"
 #include <QString>
 #include <QSqlDatabase>
 
@@ -22,10 +24,7 @@ public:
 
     /**
      * @brief Add patient to db
-     * @param id - patient_id_
-     * @param fname - patient first name
-     * @param lname - patient last name
-     * @param dob - patient date of birth
+     * @param patient - patient object
      */
     bool InsertPatient(Patient patient);
 
@@ -35,7 +34,17 @@ public:
      */
     bool DbOpen();
 
+    /**
+     * @brief InsertBloodwork
+     * @return
+     */
+    bool InsertBloodwork(Bloodwork b);
+
+    bool InsertPrescription(Prescription p);
+
     void PrintAllPatients();
+
+    int GetPatientId(QString name);
 private:
     QSqlDatabase db_;
 };
