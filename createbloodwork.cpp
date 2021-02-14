@@ -33,7 +33,7 @@ void CreateBloodwork::UpdateReasons()
         {
             QString line = in.readLine();
             QString reason = line.split(',').at(1);
-            int id = (line.split(',').at(0)).toInt();
+            //int id = (line.split(',').at(0)).toInt();
             ui->bloodworkTypeComboBox->addItem(reason);
         }
         file.close();
