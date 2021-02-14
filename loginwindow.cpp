@@ -130,7 +130,7 @@ void LoginWindow::on_loginButton_clicked()
             this->hide();
             delete ui;
             MainScreen m;
-            m.setWindowTitle("Pharmacy App");
+            m.setWindowTitle("Pharmacy App - Home");
             m.setWindowIcon(QIcon(":/icons/window-icon.svg"));
             m.setFixedSize(m.size());
             m.setModal(true);

@@ -19,6 +19,7 @@ MainScreen::~MainScreen()
 void MainScreen::on_createPrescriptionButton_clicked()
 {
     CreatePrescription create_prescription;
+    create_prescription.setWindowTitle("Pharmacy App - Create Prescription");
     create_prescription.setModal(true);
     create_prescription.exec();
 }
@@ -26,6 +27,7 @@ void MainScreen::on_createPrescriptionButton_clicked()
 void MainScreen::on_createUserButton_clicked()
 {
     CreateUser create_user;
+    create_user.setWindowTitle("Pharmacy App - Create User");
     create_user.setModal(true);
     create_user.exec();
 }
@@ -38,6 +40,7 @@ void MainScreen::on_viewPrescriptionButton_clicked()
 void MainScreen::on_bookBloodworkButton_clicked()
 {
     CreateBloodwork create_bloodwork;
+    create_bloodwork.setWindowTitle("Pharmacy App - Book Bloodwork");
     create_bloodwork.setModal(true);
     create_bloodwork.exec();
 }

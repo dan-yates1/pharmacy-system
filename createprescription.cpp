@@ -12,7 +12,6 @@ CreatePrescription::CreatePrescription(QWidget *parent) :
     ui->setupUi(this);
     // update list of medications upon class initialization
     UpdateMedications();
-    Database db;
     UpdatePatients();
 }
 
@@ -35,6 +34,8 @@ void CreatePrescription::UpdateMedications()
 
 void CreatePrescription::UpdatePatients()
 {
+    Database db;
+
     QSqlQuery query("SELECT * FROM patient");
     int fnameIndex = query.record().indexOf("first_name");
     int lnameIndex = query.record().indexOf("last_name");

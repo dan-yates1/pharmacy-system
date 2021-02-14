@@ -20,7 +20,6 @@ SOURCES += \
     loginwindow.cpp \
     main.cpp \
     mainscreen.cpp \
-    mainwindow.cpp \
     medication.cpp \
     patient.cpp \
     prescription.cpp \
@@ -35,7 +34,6 @@ HEADERS += \
     database.h \
     loginwindow.h \
     mainscreen.h \
-    mainwindow.h \
     medication.h \
     patient.h \
     prescription.h \
@@ -46,8 +44,7 @@ FORMS += \
     createprescription.ui \
     createuser.ui \
     loginwindow.ui \
-    mainscreen.ui \
-    mainwindow.ui
+    mainscreen.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

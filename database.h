@@ -14,6 +14,7 @@ public:
      * @brief Database
      */
     Database();
+
     ~Database();
 
     /**
