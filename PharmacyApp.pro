@@ -17,7 +17,9 @@ SOURCES += \
     createprescription.cpp \
     createuser.cpp \
     database.cpp \
+    loginwindow.cpp \
     main.cpp \
+    mainscreen.cpp \
     mainwindow.cpp \
     medication.cpp \
     patient.cpp \
@@ -31,6 +33,8 @@ HEADERS += \
     createprescription.h \
     createuser.h \
     database.h \
+    loginwindow.h \
+    mainscreen.h \
     mainwindow.h \
     medication.h \
     patient.h \
@@ -41,6 +45,8 @@ FORMS += \
     createbloodwork.ui \
     createprescription.ui \
     createuser.ui \
+    loginwindow.ui \
+    mainscreen.ui \
     mainwindow.ui
 
 # Default rules for deployment.

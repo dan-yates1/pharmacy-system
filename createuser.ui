@@ -89,11 +89,6 @@
        <widget class="QComboBox" name="userTypeCombo">
         <item>
          <property name="text">
-          <string>Patient</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
           <string>Technician</string>
          </property>
         </item>

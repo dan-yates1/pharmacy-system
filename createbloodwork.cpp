@@ -16,6 +16,7 @@ CreateBloodwork::CreateBloodwork(QWidget *parent) :
 {
     ui->setupUi(this);
     UpdateReasons();
+    Database db;
     UpdatePatients();
 }
 

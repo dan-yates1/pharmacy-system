@@ -21,7 +21,7 @@ Database::Database()
 
 Database::~Database()
 {
-    if (db_.isOpen())
+    if (db_.open())
     {
         db_.close();
     }
