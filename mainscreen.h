@@ -26,6 +26,8 @@ private slots:
 
     void on_viewUsersButton_clicked();
 
+    void on_calendarWidget_clicked(const QDate &date);
+
 private:
     Ui::MainScreen *ui;
 };

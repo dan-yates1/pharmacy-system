@@ -17,7 +17,6 @@ Patient CreateUser::CreatePatient()
 {
     // create patient object and assign variables
     Patient p;
-    p.set_id(ui->patientIdEdit->text().toInt());
     p.set_fname(ui->firstNameEdit->text());
     p.set_lname(ui->secondNameEdit->text());
     p.set_dob(ui->dobEdit->date());
@@ -28,7 +27,6 @@ Technician *CreateUser::CreateTechnician()
 {
     // create technician object and assign variables
     Technician *t = new Technician();
-    t->set_id(ui->patientIdEdit->text().toInt());
     t->set_fname(ui->firstNameEdit->text());
     t->set_lname(ui->secondNameEdit->text());
     t->set_dob(ui->dobEdit->date());

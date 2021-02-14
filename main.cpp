@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     LoginWindow l;
     l.setFixedSize(l.size());
     l.setWindowTitle("Pharmacy App - Login");
-    l.setWindowIcon(QIcon(":/icons/window-icon.svg"));
+    l.setWindowIcon(QIcon(":/icons/lock-icon.png"));
     l.show();
     return a.exec();  
 }

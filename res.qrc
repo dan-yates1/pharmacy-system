@@ -11,5 +11,6 @@
         <file>view-prescription.png</file>
         <file>view-patient.png</file>
         <file>window-icon.svg</file>
+        <file>lock-icon.png</file>
     </qresource>
 </RCC>
