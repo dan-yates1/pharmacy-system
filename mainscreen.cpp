@@ -51,16 +51,22 @@ void MainScreen::on_bookBloodworkButton_clicked()
 
 void MainScreen::on_viewUsersButton_clicked()
 {
-
+    // TODO:
 }
 
 void MainScreen::on_calendarWidget_clicked(const QDate &date)
 {
     CalendarView cv;
     cv.set_selected_date(date);
-    cv.setWindowTitle(("Calendar", date.toString("dd-MM-yyyy")));
+    cv.setWindowTitle("Calendar");
+    cv.setWindowIcon(QIcon(":/icons/calendar-icon.png"));
     cv.PopulateListView(date);
     cv.set_label(date.toString("dd-MM-yyyy"));
     cv.setModal(true);
     cv.exec();
+}
+
+void MainScreen::on_exitButton_clicked()
+{
+    this->close();
 }

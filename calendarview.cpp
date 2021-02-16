@@ -32,8 +32,8 @@ void CalendarView::PopulateListView(QDate date)
     Database db;
     QSqlQueryModel *modal = new QSqlQueryModel;
     QSqlQuery *query = new QSqlQuery;
-    query->prepare("SELECT patient_id,medication,start_date,end_date FROM prescription WHERE start_date = :start_date");
-    query->bindValue(":start_date", date.toString("dd-MM-yyyy"));
+    query->prepare("SELECT patient_id,medication,start_date,end_date FROM prescription WHERE start_date = :selected_date OR end_date = :selected_date");
+    query->bindValue(":selected_date", date.toString("dd-MM-yyyy"));
     query->exec();
     modal->setQuery(*query);
     ui->tableView->setModel(modal);

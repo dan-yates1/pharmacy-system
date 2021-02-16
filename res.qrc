@@ -12,5 +12,7 @@
         <file>view-patient.png</file>
         <file>window-icon.svg</file>
         <file>lock-icon.png</file>
+        <file>calendar-icon.png</file>
+        <file>quit-icon.png</file>
     </qresource>
 </RCC>
