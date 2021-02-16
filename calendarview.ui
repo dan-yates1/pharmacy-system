@@ -18,7 +18,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>91</width>
+     <width>181</width>
      <height>31</height>
     </rect>
    </property>
@@ -28,13 +28,13 @@
     </font>
    </property>
    <property name="text">
-    <string>Date:</string>
+    <string>Events for:</string>
    </property>
   </widget>
   <widget class="QLabel" name="dateLabel">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>190</x>
      <y>10</y>
      <width>201</width>
      <height>31</height>

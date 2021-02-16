@@ -18,8 +18,9 @@ public:
     void set_selected_date(QDate date);
     QDate get_selected_date();
 
-    void PopulateListView();
+    void PopulateListView(QDate date);
 
+    void set_label(QString text);
 private:
     Ui::CalendarView *ui;
     QDate todays_date_ = QDate::currentDate();

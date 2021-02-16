@@ -3,7 +3,7 @@
 #include "createprescription.h"
 #include "createbloodwork.h"
 #include "createuser.h"
-#include "calendarmanager.h"
+#include "calendarview.h"
 
 MainScreen::MainScreen(QWidget *parent) :
     QDialog(parent),
@@ -56,7 +56,11 @@ void MainScreen::on_viewUsersButton_clicked()
 
 void MainScreen::on_calendarWidget_clicked(const QDate &date)
 {
-    CalendarManager cm;
-    cm.set_today_prescriptions();
-    cm.set_selected_date(date);
+    CalendarView cv;
+    cv.set_selected_date(date);
+    cv.setWindowTitle(("Calendar", date.toString("dd-MM-yyyy")));
+    cv.PopulateListView(date);
+    cv.set_label(date.toString("dd-MM-yyyy"));
+    cv.setModal(true);
+    cv.exec();
 }
