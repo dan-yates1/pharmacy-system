@@ -22,9 +22,29 @@ public:
     void set_user_type(QString type);
     QString get_user_type();
 
+    /**
+     * @brief InsertUser
+     * @return
+     */
     bool InsertUser();
+
+    /**
+     * @brief AlreadyExists
+     * @return
+     */
     bool AlreadyExists();
+
+    /**
+     * @brief CheckPassword
+     * @return
+     */
     bool CheckPassword();
+
+    /**
+     * @brief ValidateInputs
+     * @return
+     */
+    bool ValidateInputs();
 private slots:
     void on_loginButton_clicked();
 

@@ -3,6 +3,7 @@
 
 #include "prescription.h"
 #include "bloodwork.h"
+#include <QStringList>
 
 class CalendarManager
 {
@@ -10,12 +11,12 @@ public:
     CalendarManager();
     void set_selected_date(QDate date);
     QDate get_selected_date();
-
-    void AddPrescription(Prescription p);
+    void set_today_prescriptions();
+    QStringList get_today_prescriptions();
 private:
     QDate selected_date_;
-    QVector<Prescription> today_prescription_list_;
-    QVector<Prescription> today_bloodwork_list_;
+    QStringList today_prescriptions_;
+    QVector<QString> today_bloodwork_;
 };
 
 #endif // CALENDARMANAGER_H

@@ -106,9 +106,11 @@ bool LoginWindow::CheckPassword()
     {
         QString password = query.value(password_index).toString();
         QString name = query.value(user_index).toString();
+        qDebug() << name << password;
         if (name == get_username())
         {
-            if(password == get_password())
+            // bug: "get_password()" returns nothing in this scenario
+            if(password == ui->passwordEdit->text())
             {
                 correct = true;
             }
@@ -117,10 +119,26 @@ bool LoginWindow::CheckPassword()
     return correct;
 }
 
+bool LoginWindow::ValidateInputs()
+{
+    bool ok = true;
+
+    if (ui->usernameEdit->text().isEmpty())
+    {
+        ok = false;
+    }
+    if (ui->passwordEdit->text().isEmpty())
+    {
+        ok = false;
+    }
+
+    return ok;
+}
+
 void LoginWindow::on_loginButton_clicked()
 {
     set_username(ui->usernameEdit->text());
-    set_password(ui->passwordEdit->text());
+    set_password(ui->usernameEdit->text());
     set_user_type(ui->userType->currentText());
 
     if(AlreadyExists())
@@ -130,7 +148,7 @@ void LoginWindow::on_loginButton_clicked()
             this->hide();
             delete ui;
             MainScreen m;
-            m.setWindowTitle("Pharmacy App - Home");
+            m.setWindowTitle("Home");
             m.setWindowIcon(QIcon(":/icons/window-icon.svg"));
             m.setFixedSize(m.size());
             m.setModal(true);
@@ -151,11 +169,18 @@ void LoginWindow::on_createButton_clicked()
     set_password(ui->passwordEdit->text());
     set_user_type(ui->userType->currentText());
 
+
     if(!AlreadyExists())
     {
-        InsertUser();
-        QMessageBox::information(this,"Notification",QString("User: %1 created").arg(ui->usernameEdit->text()));
-    } else {
+        if(ValidateInputs())
+        {
+            InsertUser();
+            QMessageBox::information(this,"Notification",QString("User: %1 created").arg(ui->usernameEdit->text()));
+        } else {
+            QMessageBox::information(this,"Notification",QString("Missing username/password"));
+        }
+    } else
+    {
         QMessageBox::information(this,"Notification",QString("Username already in use"));
     }
 }

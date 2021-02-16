@@ -46,6 +46,8 @@ public:
     void PrintAllPatients();
 
     int GetPatientId(QString name);
+
+    QString GetPatient(int id);
 private:
     QSqlDatabase db_;
 };

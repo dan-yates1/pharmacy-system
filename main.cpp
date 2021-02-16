@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     LoginWindow l;
     l.setFixedSize(l.size());
-    l.setWindowTitle("Pharmacy App - Login");
+    l.setWindowTitle("Login");
     l.setWindowIcon(QIcon(":/icons/lock-icon.png"));
     l.show();
     return a.exec();  

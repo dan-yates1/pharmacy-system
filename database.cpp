@@ -116,3 +116,23 @@ int Database::GetPatientId(QString name)
     }
     return id;
 }
+
+QString Database::GetPatient(int id)
+{
+    QSqlQuery query("SELECT * FROM patient");
+    int fnameIndex = query.record().indexOf("first_name");
+    int lnameIndex = query.record().indexOf("last_name");
+    int idIndex = query.record().indexOf("id");
+    QString fname;
+    QString lname;
+    while (query.next())
+    {
+        int patientId = query.value(idIndex).toInt();
+        if (patientId == id)
+        {
+            fname = query.value(fnameIndex).toString();
+            lname = query.value(lnameIndex).toString();
+        }
+    }
+    return fname + " " + lname;
+}

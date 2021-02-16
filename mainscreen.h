@@ -15,6 +15,9 @@ public:
     explicit MainScreen(QWidget *parent = nullptr);
     ~MainScreen();
 
+    //bool CheckExpiredPrescription();
+
+    //bool CheckExpire
 private slots:
     void on_createPrescriptionButton_clicked();
 

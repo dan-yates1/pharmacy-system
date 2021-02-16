@@ -60,11 +60,6 @@
        <widget class="QComboBox" name="userType">
         <item>
          <property name="text">
-          <string>Patient</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
           <string>Technician</string>
          </property>
         </item>
