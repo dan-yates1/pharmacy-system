@@ -14,5 +14,6 @@
         <file>lock-icon.png</file>
         <file>calendar-icon.png</file>
         <file>quit-icon.png</file>
+        <file>blooddrop-icon.png</file>
     </qresource>
 </RCC>

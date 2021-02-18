@@ -23,7 +23,9 @@ SOURCES += \
     medication.cpp \
     patient.cpp \
     prescription.cpp \
-    technician.cpp
+    tablemodel.cpp \
+    technician.cpp \
+    viewbloodwork.cpp
 
 HEADERS += \
     bloodwork.h \
@@ -37,7 +39,9 @@ HEADERS += \
     medication.h \
     patient.h \
     prescription.h \
-    technician.h
+    tablemodel.h \
+    technician.h \
+    viewbloodwork.h
 
 FORMS += \
     calendarview.ui \
@@ -45,7 +49,8 @@ FORMS += \
     createprescription.ui \
     createuser.ui \
     loginwindow.ui \
-    mainscreen.ui
+    mainscreen.ui \
+    viewbloodwork.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

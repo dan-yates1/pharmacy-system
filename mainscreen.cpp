@@ -4,6 +4,7 @@
 #include "createbloodwork.h"
 #include "createuser.h"
 #include "calendarview.h"
+#include "viewbloodwork.h"
 
 MainScreen::MainScreen(QWidget *parent) :
     QDialog(parent),
@@ -66,7 +67,11 @@ void MainScreen::on_calendarWidget_clicked(const QDate &date)
     cv.exec();
 }
 
-void MainScreen::on_exitButton_clicked()
+void MainScreen::on_viewBloodworkButton_clicked()
 {
-    this->close();
+    viewBloodwork view_bloodwork;
+    view_bloodwork.setWindowTitle("Book Bloodwork");
+    view_bloodwork.setWindowIcon(QIcon(":/icons/window-icon.svg"));
+    view_bloodwork.setModal(true);
+    view_bloodwork.exec();
 }

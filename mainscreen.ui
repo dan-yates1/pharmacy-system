@@ -218,7 +218,7 @@
        </widget>
       </item>
       <item row="2" column="2">
-       <widget class="QPushButton" name="exitButton">
+       <widget class="QPushButton" name="viewBloodworkButton">
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -233,7 +233,7 @@
         </property>
         <property name="icon">
          <iconset resource="res.qrc">
-          <normaloff>:/icons/quit-icon.png</normaloff>:/icons/quit-icon.png</iconset>
+          <normaloff>:/icons/blooddrop-icon.png</normaloff>:/icons/blooddrop-icon.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -246,7 +246,7 @@
       <item row="3" column="2" alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Exit</string>
+         <string>View Bloodwork</string>
         </property>
        </widget>
       </item>

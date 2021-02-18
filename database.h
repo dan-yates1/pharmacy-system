@@ -5,6 +5,7 @@
 #include "bloodwork.h"
 #include "prescription.h"
 #include <QString>
+#include <QList>
 #include <QSqlDatabase>
 
 class Database
@@ -48,6 +49,8 @@ public:
     int GetPatientId(QString name);
 
     QString GetPatient(int id);
+
+    QList<Bloodwork> GetBloodwork();
 private:
     QSqlDatabase db_;
 };

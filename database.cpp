@@ -57,7 +57,7 @@ bool Database::InsertBloodwork(Bloodwork b)
     qry.prepare("INSERT INTO bloodwork (patient_id,reason,date) VALUES(:patient_id,:reason,:date)");
     qry.bindValue(":patient_id", b.get_patient_id());
     qry.bindValue(":reason", b.get_reason());
-    qry.bindValue(":date", b.get_date().toString("dd-MM-yyyy"));
+    qry.bindValue(":date", b.get_date().toString("yyyy-MM-dd"));
 
     if(qry.exec())
     {
@@ -79,8 +79,8 @@ bool Database::InsertPrescription(Prescription p)
     qry.prepare("INSERT INTO prescription (patient_id,medication,start_date,end_date) VALUES(:patient_id,:medication,:start_date,:end_date)");
     qry.bindValue(":patient_id", p.get_patient_id());
     qry.bindValue(":medication", p.get_drug());
-    qry.bindValue(":start_date", p.get_start_date().toString("dd-MM-yyyy"));
-    qry.bindValue(":end_date", p.get_end_date().toString("dd-MM-yyyy"));
+    qry.bindValue(":start_date", p.get_start_date().toString("yyyy-MM-dd"));
+    qry.bindValue(":end_date", p.get_end_date().toString("yyyy-MM-dd"));
 
     if(qry.exec())
     {
@@ -135,4 +135,22 @@ QString Database::GetPatient(int id)
         }
     }
     return fname + " " + lname;
+}
+
+QList<Bloodwork> Database::GetBloodwork()
+{
+    QSqlQuery query("SELECT * FROM bloodwork");
+    int idIndex = query.record().indexOf("patient_id");
+    int reasonIndex = query.record().indexOf("reason");
+    int dateIndex = query.record().indexOf("date");
+    QList<Bloodwork> bList;
+    while (query.next())
+    {
+        Bloodwork b;
+        b.set_patient_id(query.value(idIndex).toInt());
+        b.set_reason(query.value(reasonIndex).toString());
+        b.set_date(query.value(dateIndex).toDate());
+        bList.append(b);
+    }
+    return bList;
 }

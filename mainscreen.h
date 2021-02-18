@@ -31,7 +31,7 @@ private slots:
 
     void on_calendarWidget_clicked(const QDate &date);
 
-    void on_exitButton_clicked();
+    void on_viewBloodworkButton_clicked();
 
 private:
     Ui::MainScreen *ui;
