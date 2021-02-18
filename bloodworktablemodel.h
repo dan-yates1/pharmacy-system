@@ -1,15 +1,15 @@
-#ifndef TABLEMODEL_H
-#define TABLEMODEL_H
+#ifndef BLOODWORKTABLEMODEL_H
+#define BLOODWORKTABLEMODEL_H
 
 #include <QAbstractTableModel>
 
 
-class TableModel : public QAbstractTableModel
+class bloodworkTableModel : public QAbstractTableModel
 {
     Q_OBJECT
 
 public:
-    TableModel(QObject *parent = 0);
+    bloodworkTableModel(QObject *parent = 0);
 
     void populateData(const QList<QString> &patient,const QList<QString> &reason,const QList<QString> &date);
 
@@ -26,4 +26,4 @@ private:
 
 };
 
-#endif // TABLEMODEL_H
+#endif // BLOODWORKTABLEMODEL_H

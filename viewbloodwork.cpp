@@ -1,9 +1,7 @@
 #include "viewbloodwork.h"
 #include "ui_viewbloodwork.h"
 #include "database.h"
-#include "tablemodel.h"
-#include <QSqlTableModel>
-#include <QDebug>
+#include "bloodworktablemodel.h"
 
 viewBloodwork::viewBloodwork(QWidget *parent) :
     QDialog(parent),
@@ -35,11 +33,10 @@ void viewBloodwork::populateList()
         reasonList << reason;
         QString date = b.get_date().toString("dd-MM-yyyy");
         dateList << date;
-        qDebug() << date;
         iter++;
     }
 
-    TableModel *BloodworkModel = new TableModel(this);
+    bloodworkTableModel *BloodworkModel = new bloodworkTableModel(this);
     BloodworkModel->populateData(idList, reasonList, dateList);
     ui->tableView->setModel(BloodworkModel);
     ui->tableView->horizontalHeader()->setDefaultSectionSize(150);

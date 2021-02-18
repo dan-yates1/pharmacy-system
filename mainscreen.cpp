@@ -5,6 +5,7 @@
 #include "createuser.h"
 #include "calendarview.h"
 #include "viewbloodwork.h"
+#include "viewprescription.h"
 
 MainScreen::MainScreen(QWidget *parent) :
     QDialog(parent),
@@ -38,7 +39,11 @@ void MainScreen::on_createUserButton_clicked()
 
 void MainScreen::on_viewPrescriptionButton_clicked()
 {
-    // TODO:
+    viewPrescription view_prescription;
+    view_prescription.setWindowTitle("View Prescriptions");
+    view_prescription.setWindowIcon(QIcon(":/icons/window-icon.svg"));
+    view_prescription.setModal(true);
+    view_prescription.exec();
 }
 
 void MainScreen::on_bookBloodworkButton_clicked()
@@ -70,7 +75,7 @@ void MainScreen::on_calendarWidget_clicked(const QDate &date)
 void MainScreen::on_viewBloodworkButton_clicked()
 {
     viewBloodwork view_bloodwork;
-    view_bloodwork.setWindowTitle("Book Bloodwork");
+    view_bloodwork.setWindowTitle("View Bloodwork");
     view_bloodwork.setWindowIcon(QIcon(":/icons/window-icon.svg"));
     view_bloodwork.setModal(true);
     view_bloodwork.exec();

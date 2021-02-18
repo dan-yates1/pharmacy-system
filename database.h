@@ -51,6 +51,8 @@ public:
     QString GetPatient(int id);
 
     QList<Bloodwork> GetBloodwork();
+
+    QList<Prescription> GetPrescription();
 private:
     QSqlDatabase db_;
 };

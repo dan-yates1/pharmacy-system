@@ -12,6 +12,7 @@ CONFIG += c++11
 
 SOURCES += \
     bloodwork.cpp \
+    bloodworktablemodel.cpp \
     calendarview.cpp \
     createbloodwork.cpp \
     createprescription.cpp \
@@ -23,12 +24,14 @@ SOURCES += \
     medication.cpp \
     patient.cpp \
     prescription.cpp \
-    tablemodel.cpp \
+    prescriptiontablemodel.cpp \
     technician.cpp \
-    viewbloodwork.cpp
+    viewbloodwork.cpp \
+    viewprescription.cpp
 
 HEADERS += \
     bloodwork.h \
+    bloodworktablemodel.h \
     calendarview.h \
     createbloodwork.h \
     createprescription.h \
@@ -39,9 +42,10 @@ HEADERS += \
     medication.h \
     patient.h \
     prescription.h \
-    tablemodel.h \
+    prescriptiontablemodel.h \
     technician.h \
-    viewbloodwork.h
+    viewbloodwork.h \
+    viewprescription.h
 
 FORMS += \
     calendarview.ui \
@@ -50,7 +54,8 @@ FORMS += \
     createuser.ui \
     loginwindow.ui \
     mainscreen.ui \
-    viewbloodwork.ui
+    viewbloodwork.ui \
+    viewprescription.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

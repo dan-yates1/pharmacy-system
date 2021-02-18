@@ -154,3 +154,23 @@ QList<Bloodwork> Database::GetBloodwork()
     }
     return bList;
 }
+
+QList<Prescription> Database::GetPrescription()
+{
+    QSqlQuery query("SELECT * FROM prescription");
+    int idIndex = query.record().indexOf("patient_id");
+    int medIndex = query.record().indexOf("medication");
+    int startDateIndex = query.record().indexOf("start_date");
+    int endDateIndex = query.record().indexOf("end_date");
+    QList<Prescription> pList;
+    while (query.next())
+    {
+        Prescription p;
+        p.set_patient_id(query.value(idIndex).toInt());
+        p.set_drug(query.value(medIndex).toString());
+        p.set_start_date(query.value(startDateIndex).toDate());
+        p.set_end_date(query.value(endDateIndex).toDate());
+        pList.append(p);
+    }
+    return pList;
+}

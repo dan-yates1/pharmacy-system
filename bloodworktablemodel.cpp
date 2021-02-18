@@ -1,10 +1,10 @@
-#include "tablemodel.h"
+#include "bloodworktablemodel.h"
 
-TableModel::TableModel(QObject *parent) : QAbstractTableModel(parent)
+bloodworkTableModel::bloodworkTableModel(QObject *parent) : QAbstractTableModel(parent)
 {
 }
 
-void TableModel::populateData(const QList<QString> &patient,const QList<QString> &reason,const QList<QString> &date)
+void bloodworkTableModel::populateData(const QList<QString> &patient,const QList<QString> &reason,const QList<QString> &date)
 {
     tm_patient.clear();
     tm_patient = patient;
@@ -15,19 +15,19 @@ void TableModel::populateData(const QList<QString> &patient,const QList<QString>
     return;
 }
 
-int TableModel::rowCount(const QModelIndex &parent) const
+int bloodworkTableModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return tm_patient.length();
 }
 
-int TableModel::columnCount(const QModelIndex &parent) const
+int bloodworkTableModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return 3;
 }
 
-QVariant TableModel::data(const QModelIndex &index, int role) const
+QVariant bloodworkTableModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid() || role != Qt::DisplayRole) {
         return QVariant();
@@ -42,7 +42,7 @@ QVariant TableModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-QVariant TableModel::headerData(int section, Qt::Orientation orientation, int role) const
+QVariant bloodworkTableModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
         if (section == 0) {
