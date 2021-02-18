@@ -13,6 +13,8 @@ CreatePrescription::CreatePrescription(QWidget *parent) :
     // update list of medications upon class initialization
     UpdateMedications();
     UpdatePatients();
+    ui->startDateEdit->setDate(QDate::currentDate());
+    ui->endDateEdit->setDate(QDate::currentDate().addMonths(1));
 }
 
 CreatePrescription::~CreatePrescription()

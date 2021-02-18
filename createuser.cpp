@@ -6,6 +6,7 @@ CreateUser::CreateUser(QWidget *parent) :
     ui(new Ui::CreateUser)
 {
     ui->setupUi(this);
+    ui->dobEdit->setDate(QDate::currentDate());
 }
 
 CreateUser::~CreateUser()

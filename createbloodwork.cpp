@@ -18,6 +18,7 @@ CreateBloodwork::CreateBloodwork(QWidget *parent) :
     UpdateReasons();
     Database db;
     UpdatePatients();
+    ui->bloodoworkDateEdit->setDate(QDate::currentDate());
 }
 
 CreateBloodwork::~CreateBloodwork()
