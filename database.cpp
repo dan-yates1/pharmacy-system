@@ -174,3 +174,21 @@ QList<Prescription> Database::GetPrescription()
     }
     return pList;
 }
+
+QList<Patient> Database::GetPatients()
+{
+    QSqlQuery query("SELECT * FROM patient");
+    int fNameIndex = query.record().indexOf("first_name");
+    int lNameIndex = query.record().indexOf("last_name");
+    int dobIndex = query.record().indexOf("dob");
+    QList<Patient> pList;
+    while (query.next())
+    {
+        Patient p;
+        p.set_fname(query.value(fNameIndex).toString());
+        p.set_lname(query.value(lNameIndex).toString());
+        p.set_dob(query.value(dobIndex).toDate());
+        pList.append(p);
+    }
+    return pList;
+}

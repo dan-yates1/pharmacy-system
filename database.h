@@ -53,6 +53,8 @@ public:
     QList<Bloodwork> GetBloodwork();
 
     QList<Prescription> GetPrescription();
+
+    QList<Patient> GetPatients();
 private:
     QSqlDatabase db_;
 };
