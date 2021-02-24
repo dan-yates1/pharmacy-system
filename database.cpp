@@ -35,7 +35,7 @@ bool Database::InsertPatient(Patient patient)
     qry.prepare("INSERT INTO patient (first_name,last_name,dob) VALUES(:first_name,:last_name,:dob)");
     qry.bindValue(":first_name", patient.get_fname());
     qry.bindValue(":last_name", patient.get_lname());
-    qry.bindValue(":dob", patient.get_dob().toString("dd-MM-yyyy"));
+    qry.bindValue(":dob", patient.get_dob().toString("yyyy-MM-dd"));
 
     if(qry.exec())
     {
