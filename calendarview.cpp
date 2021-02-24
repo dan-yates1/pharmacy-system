@@ -37,6 +37,8 @@ void CalendarView::PopulateListView(QDate date)
     query->exec();
     modal->setQuery(*query);
     ui->tableView->setModel(modal);
+    ui->tableView->horizontalHeader()->setDefaultSectionSize(150);
+    //ui->tableView->horizontalHeader().
 }
 
 void CalendarView::set_label(QString text)

@@ -7,17 +7,31 @@
 #include "viewbloodwork.h"
 #include "viewprescription.h"
 #include "viewusers.h"
+#include "expiredview.h"
 
 MainScreen::MainScreen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainScreen)
 {
+    //QList<Bloodwork> expired_bw = GetExpiredBw();
     ui->setupUi(this);
 }
 
 MainScreen::~MainScreen()
 {
     delete ui;
+}
+
+QList<Bloodwork> MainScreen::GetExpiredBw()
+{
+    Database db;
+    QList<Bloodwork> bw_list = db.GetBloodwork();
+}
+
+QList<Prescription> MainScreen::GetExpiredPres()
+{
+    Database db;
+    QList<Prescription> pres_list = db.GetExpiredPrescription(today_date_);
 }
 
 void MainScreen::on_createPrescriptionButton_clicked()
@@ -84,4 +98,12 @@ void MainScreen::on_viewBloodworkButton_clicked()
     view_bloodwork.setWindowIcon(QIcon(":/icons/window-icon.svg"));
     view_bloodwork.setModal(true);
     view_bloodwork.exec();
+}
+
+void MainScreen::on_expiredButton_clicked()
+{
+    ExpiredView e;
+    e.setWindowTitle("Expired Bloodwork/Prescriptions");
+    e.setModal(true);
+    e.exec();
 }

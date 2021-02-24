@@ -2,6 +2,9 @@
 #define MAINSCREEN_H
 
 #include <QDialog>
+#include <QDate>
+#include "prescription.h"
+#include "bloodwork.h"
 
 namespace Ui {
 class MainScreen;
@@ -15,9 +18,9 @@ public:
     explicit MainScreen(QWidget *parent = nullptr);
     ~MainScreen();
 
-    //bool CheckExpiredPrescription();
+    QList<Bloodwork> GetExpiredBw();
+    QList<Prescription> GetExpiredPres();
 
-    //bool CheckExpire
 private slots:
     void on_createPrescriptionButton_clicked();
 
@@ -33,8 +36,11 @@ private slots:
 
     void on_viewBloodworkButton_clicked();
 
+    void on_expiredButton_clicked();
+
 private:
     Ui::MainScreen *ui;
+    QDate today_date_ = QDate::currentDate();
 };
 
 #endif // MAINSCREEN_H

@@ -52,7 +52,11 @@ public:
 
     QList<Bloodwork> GetBloodwork();
 
+    QList<Bloodwork> GetExpiredBw(QDate date);
+
     QList<Prescription> GetPrescription();
+
+    QList<Prescription> GetExpiredPrescription(QDate date);
 
     QList<Patient> GetPatients();
 private:

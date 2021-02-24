@@ -13,11 +13,13 @@ CONFIG += c++11
 SOURCES += \
     bloodwork.cpp \
     bloodworktablemodel.cpp \
+    calendarmanager.cpp \
     calendarview.cpp \
     createbloodwork.cpp \
     createprescription.cpp \
     createuser.cpp \
     database.cpp \
+    expiredview.cpp \
     loginwindow.cpp \
     main.cpp \
     mainscreen.cpp \
@@ -34,11 +36,13 @@ SOURCES += \
 HEADERS += \
     bloodwork.h \
     bloodworktablemodel.h \
+    calendarmanager.h \
     calendarview.h \
     createbloodwork.h \
     createprescription.h \
     createuser.h \
     database.h \
+    expiredview.h \
     loginwindow.h \
     mainscreen.h \
     medication.h \
@@ -56,6 +60,7 @@ FORMS += \
     createbloodwork.ui \
     createprescription.ui \
     createuser.ui \
+    expiredview.ui \
     loginwindow.ui \
     mainscreen.ui \
     viewbloodwork.ui \

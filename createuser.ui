@@ -37,14 +37,12 @@
       </item>
       <item row="0" column="1">
        <widget class="QComboBox" name="userTypeCombo">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <item>
          <property name="text">
-          <string>Technician</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Admin</string>
+          <string>Patient</string>
          </property>
         </item>
        </widget>
