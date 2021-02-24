@@ -13,6 +13,7 @@ ExpiredView::ExpiredView(QWidget *parent) :
 {
     ui->setupUi(this);
     PopulatePrescriptions();
+    PopulateBloodwork();
 }
 
 ExpiredView::~ExpiredView()
