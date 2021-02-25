@@ -158,7 +158,7 @@ QList<Bloodwork> Database::GetBloodwork()
 QList<Bloodwork> Database::GetExpiredBw(QDate date)
 {
     QSqlQuery query;
-    query.prepare("SELECT * FROM bloodwork WHERE date = :date");
+    query.prepare("SELECT * FROM bloodwork WHERE date = ':date'");
     query.bindValue(":date", date.toString("dd-MM-yyyy"));
     query.exec();
     int idIndex = query.record().indexOf("patient_id");
@@ -199,9 +199,8 @@ QList<Prescription> Database::GetPrescription()
 QList<Prescription> Database::GetExpiredPrescription(QDate date)
 {
     QSqlQuery query;
-    query.prepare("SELECT * FROM prescription WHERE end_date = :end_date");
+    query.prepare("SELECT * FROM prescription WHERE end_date = ':end_date'");
     query.bindValue(":end_date", date.toString("dd-MM-yyyy"));
-    query.exec();
     int idIndex = query.record().indexOf("patient_id");
     int medIndex = query.record().indexOf("medication");
     int startDateIndex = query.record().indexOf("start_date");

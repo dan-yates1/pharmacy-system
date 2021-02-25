@@ -16,5 +16,9 @@
         <file>quit-icon.png</file>
         <file>blooddrop-icon.png</file>
         <file>bell-icon.png</file>
+        <file>help-icon.png</file>
+    </qresource>
+    <qresource prefix="/pdf">
+        <file>help.pdf</file>
     </qresource>
 </RCC>

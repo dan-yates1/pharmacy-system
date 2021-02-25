@@ -20,6 +20,7 @@ SOURCES += \
     createuser.cpp \
     database.cpp \
     expiredview.cpp \
+    helpview.cpp \
     loginwindow.cpp \
     main.cpp \
     mainscreen.cpp \
@@ -43,6 +44,7 @@ HEADERS += \
     createuser.h \
     database.h \
     expiredview.h \
+    helpview.h \
     loginwindow.h \
     mainscreen.h \
     medication.h \
@@ -61,6 +63,7 @@ FORMS += \
     createprescription.ui \
     createuser.ui \
     expiredview.ui \
+    helpview.ui \
     loginwindow.ui \
     mainscreen.ui \
     viewbloodwork.ui \

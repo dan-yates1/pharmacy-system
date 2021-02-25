@@ -38,9 +38,15 @@ private slots:
 
     void on_expiredButton_clicked();
 
+    void on_expiredButton_2_clicked();
+
+    void on_expiredButton_3_clicked();
+
 private:
     Ui::MainScreen *ui;
     QDate today_date_ = QDate::currentDate();
+    QList<Prescription> ex_pres;
+    QList<Bloodwork> ex_bw;
 };
 
 #endif // MAINSCREEN_H
