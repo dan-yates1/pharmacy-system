@@ -10,12 +10,16 @@
 #include "expiredview.h"
 #include <QDesktopServices>
 #include <QUrl>
+#include <QFileDialog>
 
 MainScreen::MainScreen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainScreen)
 {
     ui->setupUi(this);
+    QDate today = QDate::currentDate();
+    QTextCharFormat format = ui->calendarWidget->weekdayTextFormat(Qt::Saturday);
+    ui->calendarWidget->setDateTextFormat(today, format);
 }
 
 MainScreen::~MainScreen()
@@ -104,10 +108,14 @@ void MainScreen::on_expiredButton_clicked()
 
 void MainScreen::on_expiredButton_2_clicked()
 {
-    QDesktopServices::openUrl(QUrl::fromLocalFile("bell-icon.png"));
+    QDir dir;
+    QString path = dir.absolutePath();
+    path.append("/help.pdf");
+    QDesktopServices::openUrl(QUrl::fromLocalFile(path));
 }
 
 void MainScreen::on_expiredButton_3_clicked()
 {
+    // exit application
     this->~MainScreen();
 }
