@@ -13,7 +13,7 @@ CONFIG += c++11
 SOURCES += \
     bloodwork.cpp \
     bloodworktablemodel.cpp \
-    calendarmanager.cpp \
+    #calendarmanager.cpp \
     calendarview.cpp \
     createbloodwork.cpp \
     createprescription.cpp \
@@ -37,7 +37,7 @@ SOURCES += \
 HEADERS += \
     bloodwork.h \
     bloodworktablemodel.h \
-    calendarmanager.h \
+    #calendarmanager.h \
     calendarview.h \
     createbloodwork.h \
     createprescription.h \
