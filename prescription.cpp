@@ -25,6 +25,11 @@ void Prescription::set_patient_id(int id)
     patient_id_ = id;
 }
 
+int Prescription::get_drug_id()
+{
+    return drug_id_;
+}
+
 void Prescription::set_drug_id(int id)
 {
     drug_id_ = id;

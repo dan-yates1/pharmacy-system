@@ -39,6 +39,8 @@ public:
      * @return
      */
     Bloodwork PopulateBloodwork();
+
+    void set_patient(int id);
 private slots:
     void on_submitBloodworkButton_clicked();
 

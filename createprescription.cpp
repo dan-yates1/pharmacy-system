@@ -2,6 +2,8 @@
 #include "ui_createprescription.h"
 #include "prescription.h"
 #include "database.h"
+#include "createbloodwork.h"
+#include "medication.h"
 #include <QSqlQuery>
 #include <QSqlRecord>
 
@@ -32,6 +34,7 @@ void CreatePrescription::UpdateMedications()
     {
         ui->medTypeComboBox->addItem(medication_list[i]);
     }
+    delete m;
 }
 
 void CreatePrescription::UpdatePatients()
@@ -72,6 +75,19 @@ void CreatePrescription::on_createPrescriptionButton_clicked()
 
     // create prescription object
     Prescription p = PopulatePrescription();
+    // check if medication requires bloodwork
+    Medication m;
+    if(m.get_access(p.get_drug_id()) >= 3)
+    {
+        QMessageBox::information(this,"Notification","Additional bloodwork requried for following medication");
+        CreateBloodwork create_bloodwork;
+        create_bloodwork.setWindowTitle("Book Bloodwork");
+        create_bloodwork.setWindowIcon(QIcon(":/icons/blooddrop-icon.png"));
+        create_bloodwork.setModal(true);
+        create_bloodwork.exec();
+        create_bloodwork.set_patient(p.get_patient_id());
+    }
+
     Database db;
     db.InsertPrescription(p);
 

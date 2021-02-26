@@ -67,6 +67,12 @@ Bloodwork CreateBloodwork::PopulateBloodwork()
     return b;
 }
 
+void CreateBloodwork::set_patient(int id)
+{
+    ui->patientComboBox->setCurrentIndex(id);
+    ui->patientComboBox->setEnabled(false);
+}
+
 
 void CreateBloodwork::on_submitBloodworkButton_clicked()
 {
