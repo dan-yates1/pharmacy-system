@@ -79,13 +79,13 @@ void CreatePrescription::on_createPrescriptionButton_clicked()
     Medication m;
     if(m.get_access(p.get_drug_id()) >= 3)
     {
-        QMessageBox::information(this,"Notification","Additional bloodwork requried for following medication");
+        QMessageBox::information(this,"Notification",QString("Additional bloodwork requried for %1").arg(p.get_drug()));
         CreateBloodwork create_bloodwork;
         create_bloodwork.setWindowTitle("Book Bloodwork");
         create_bloodwork.setWindowIcon(QIcon(":/icons/blooddrop-icon.png"));
         create_bloodwork.setModal(true);
         create_bloodwork.exec();
-        create_bloodwork.set_patient(p.get_patient_id());
+        create_bloodwork.set_patient(2);
     }
 
     Database db;
